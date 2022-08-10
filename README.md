@@ -11,6 +11,8 @@ Necesitas instalar python 3.7: https://www.python.org/downloads/release/python-3
 
 
 <br>
+<br>
+<br>
 Una vez tienes el token lo añades en el archivo <a href="https://github.com/jose89fcb/Habbo-Home-Antigua-bot-discord/blob/main/configuracion.json">configuracion.json</a>
 <br>
 
