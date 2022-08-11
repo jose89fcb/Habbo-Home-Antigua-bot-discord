@@ -17,3 +17,8 @@ Una vez tienes el token lo añades en el archivo <a href="https://github.com/jos
 <br>
 
 Cualquier problema no duden en preguntar
+<br>
+Necesitas instalar python 3.7: https://www.python.org/downloads/release/python-370/
+<br>
+#obten un bot y un token en: https://discord.com/developers/applications
+
