@@ -5,7 +5,9 @@ import requests
 import time
 from PIL import Image, ImageDraw, ImageFont, ImageFile
 import io
-import PIL
+
+
+from PIL import UnidentifiedImageError
  
 bot = commands.Bot(command_prefix='!', description="ayuda bot") #Comando
 bot.remove_command("help") # Borra el comando por defecto !help
@@ -38,18 +40,28 @@ async def habbohome(ctx, *, habboNombre):
    
     
 
-    
-    
    
     
     url = f"https://images.habbo.com/web_images/mypages/{identificador}/{idcreador}.png" #url
     
     
     
+    r = requests.get(url)
+    if  r.status_code ==200:
+        imagen = Image.open(io.BytesIO(requests.get(url).content))
+        with io.BytesIO() as imagen_binary:
+            imagen.save(imagen_binary, 'PNG')
+            imagen_binary.seek(0)
+            await ctx.send(file=discord.File(fp=imagen_binary, filename=f'HabboHomeAntigua.png'))
+
+    else:
+        await ctx.send("La habbo home no existe❌")
+        
+
+
+
     
 
-    imagen = Image.open(io.BytesIO(requests.get(url).content))
-    
    
     
     
@@ -64,16 +76,11 @@ async def habbohome(ctx, *, habboNombre):
 
 
     
-    with io.BytesIO() as imagen_binary:
-       
-        
-        imagen.save(imagen_binary, 'PNG')
-        
-        imagen_binary.seek(0)
+    
         
        
         
-        await ctx.send(file=discord.File(fp=imagen_binary, filename=f'HabboHomeAntigua.png'))
+    
 
   
  
