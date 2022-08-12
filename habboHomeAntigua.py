@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFile
 import io
 
 
-from PIL import UnidentifiedImageError
+
  
 bot = commands.Bot(command_prefix='!', description="ayuda bot") #Comando
 bot.remove_command("help") # Borra el comando por defecto !help
