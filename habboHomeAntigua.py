@@ -17,18 +17,18 @@ with open("configuracion.json") as f: #Creamos un archivo de configuracion para 
     config = json.load(f)
  
 @bot.command()
-async def habbohome(ctx, *, habboNombre):
+async def habbohome(ctx, habboNombre, *, Hotel):
 
     await ctx.message.delete() #Borramos el comando para no dejar sucio el chat xD
     await ctx.send("Generando Habbo Home Antigua...", delete_after=0)
     time.sleep(3) #Añadimos un tiempo para que sea borrado
 
     ####
-    response = requests.get(f"https://www.habbo.es/api/public/users?name={habboNombre}")
+    response = requests.get(f"https://www.habbo.{Hotel}/api/public/users?name={habboNombre}")
     idhabbo = response.json()['uniqueId']
     identificador = response.json()['uniqueId'].split("-")[-2]
     ###
-    response = requests.get(f"https://www.habbo.es/extradata/public/users/{idhabbo}/photos")
+    response = requests.get(f"https://www.habbo.{Hotel}/extradata/public/users/{idhabbo}/photos")
     try:
 
      idcreador = response.json()[0]['creator_id']
@@ -52,10 +52,21 @@ async def habbohome(ctx, *, habboNombre):
         with io.BytesIO() as imagen_binary:
             imagen.save(imagen_binary, 'PNG')
             imagen_binary.seek(0)
-            await ctx.send(file=discord.File(fp=imagen_binary, filename=f'HabboHomeAntigua.png'))
+            
+
+            embed = discord.Embed(title="Habbo Home", description=f"Aquí tienes la Habbo Home de `{habboNombre}` de Habbo {Hotel.upper()}")
+            embed.set_image(url=f"attachment://HabboHomeAntigua.png")
+            
+            embed.set_thumbnail(url="https://images.habbo.com/c_images/album1584/HHOME.png")
+           
+
+         
+            
+            await ctx.send(f"Hola, {ctx.author.mention} este es el póster de {habboNombre}",embed=embed,file=discord.File(fp=imagen_binary, filename=f'HabboHomeAntigua.png'))
+            
 
     else:
-        await ctx.send("La habbo home no existe❌")
+        await ctx.send(f"{habboNombre} no tiene póster ❌")
         
 
 
