@@ -1,9 +1,9 @@
 Comando para usar el bot:
 <br>
-!habbohome .iroke.
+!habbohome .iroke. es 
 
 
-<img src="https://i.imgur.com/EhdH3Ty.png">
+<img src="https://i.imgur.com/RzzQ2JZ.png">
 <br>
 Necesitas instalar python 3.7: https://www.python.org/downloads/release/python-370/
 <br>
