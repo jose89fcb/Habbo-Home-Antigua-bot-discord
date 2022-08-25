@@ -1,3 +1,25 @@
+Todos los <b>HOTELES</b> comprobados:
+<br>
+habbo.com = Sectional
+<br>
+habbo.it = teschietto96
+<br>
+habbo.fr = jorda
+<br>
+habbo.de = HappyBoyx3
+<br>
+habbo.es = .iroke.
+<br>
+habbo.nl = fueel
+<br>
+habbo.com.br = Desgosto
+<br>
+habbo.com.tr = istanbul
+<br>
+habbo.fi = Kyselija
+<br>
+<br>
+
 Comando para usar el bot:
 <br>
 !habbohome .iroke. es 
